@@ -1,50 +1,4 @@
-/* Home Loan Essentials: homepage.
-   Brand colours, logo and fonts are unchanged; this file sets the homepage layout.
-   Shared navigation, footer, buttons and focus styles live in site.css (loaded first). */
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --cream:#f0ede6;--cream2:#e8e3d9;--paper:#f7f5f0;
-  --dark:#1c2b27;--dark2:#243730;--deep:#14201c;
-  --green:#2a5c45;--green2:#3a7a5c;--green-light:#4a9a72;--mint:#8fc9a8;
-  --text:#1c2b27;--text2:#4a5e58;--white:#fff;
-  --gut:clamp(20px,5vw,64px);
-  --max:1200px;
-  --sec:clamp(88px,12vw,152px);
-  --serif:'Playfair Display',Georgia,serif;
-  --sans:'Inter',system-ui,sans-serif;
-  --mono:'DM Mono',ui-monospace,monospace;
-}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--text);background:var(--paper);line-height:1.6;overflow-x:hidden}
-img{display:block;height:auto}
-a{color:inherit}
-
-/* Base pieces the shared layer builds on */
-nav.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between}
-.nav-links{display:flex;align-items:center;list-style:none}
-.nav-links a{text-decoration:none;font-weight:500}
-.nav-cta{display:flex;align-items:center;gap:.45rem;background:var(--green);color:var(--white);border:1px solid var(--green2);font-weight:600;text-decoration:none}
-.nav-toggle{display:none;background:none;border:0;cursor:pointer}
-.btn-green{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--green);color:var(--white);font:600 .92rem/1 var(--sans);text-decoration:none;border:0;cursor:pointer}
-.btn-green:hover{background:var(--green2)}
-.btn-line{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:46px;padding:.8rem 1.6rem;border-radius:999px;font:600 .92rem/1 var(--sans);text-decoration:none;border:1px solid currentColor;transition:background-color .22s var(--ease-out),color .22s var(--ease-out),transform .22s var(--ease-out)}
-.btn-line:hover{transform:translateY(-2px)}
-.btn-line:active{transform:translateY(0) scale(.985)}
-.btn-line--light{color:var(--white);border-color:rgba(255,255,255,.45)}
-.btn-line--light:hover{background:var(--white);color:var(--dark);border-color:var(--white)}
-
-.wrap{max-width:calc(var(--max) + var(--gut)*2);margin:0 auto;padding:0 var(--gut)}
-.eyebrow{font:500 .7rem/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--green2);margin-bottom:1.1rem;display:flex;align-items:center;gap:.75rem}
-.eyebrow::before{content:'';width:28px;height:1px;background:currentColor;opacity:.6}
-.on-dark .eyebrow{color:var(--mint)}
-.h2{font:700 clamp(2.2rem,4.6vw,3.9rem)/1.06 var(--serif);letter-spacing:-.015em;color:var(--dark)}
-.h2 em{font-style:italic;font-weight:400;color:var(--green2)}
-.on-dark .h2{color:var(--white)}
-.on-dark .h2 em{color:var(--mint)}
-.lead{font-size:clamp(1rem,1.3vw,1.125rem);line-height:1.7;color:var(--text2);max-width:34rem}
-.on-dark .lead{color:rgba(255,255,255,.68)}
-.sec{padding:var(--sec) 0;position:relative}
+/* Home Loan Essentials: homepage layout. Loaded after base.css and site.css. */
 
 /* ---------- Hero ---------- */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;color:var(--white);background:var(--deep);overflow:hidden;isolation:isolate}
@@ -240,4 +194,69 @@ a.cinfo-val:hover{color:var(--green)}
 @media (prefers-reduced-motion:reduce){
   .js [data-enter]{opacity:1;transform:none;animation:none}
   .flow-link span,.nw-pin-dot{animation:none}
+}
+
+/* ---------- Services: link to specialist lending ---------- */
+.svc-more{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.25rem;font-weight:600;font-size:.92rem;color:var(--green);text-decoration:none;min-height:44px}
+.svc-more:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- How we work ---------- */
+.how{background:var(--white);padding:clamp(72px,9vw,120px) 0}
+.how-head{max-width:40rem}
+.how-grid{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:clamp(2.5rem,5vw,4rem);border-top:1px solid var(--line)}
+.how-item{padding:2rem clamp(1rem,3vw,2.5rem) 0 0}
+.how-item+.how-item{padding-left:clamp(1rem,3vw,2.5rem);border-left:1px solid var(--line)}
+.how-num{display:block;font:500 .78rem/1 var(--mono);letter-spacing:.1em;color:var(--green2)}
+.how-item h3{font:700 clamp(1.3rem,2vw,1.6rem)/1.2 var(--serif);color:var(--dark);margin-top:1.1rem}
+.how-item p{margin-top:.75rem;line-height:1.7;color:var(--text2)}
+
+/* ---------- Calculator strip ---------- */
+.cstrip{background:var(--white);padding:clamp(72px,9vw,120px) 0;border-top:1px solid var(--line)}
+.cstrip-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem 3rem;flex-wrap:wrap}
+.cstrip-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;margin-top:clamp(2rem,4vw,3rem)}
+.cstrip-list a{display:flex;flex-direction:column;gap:.35rem;height:100%;padding:1.25rem 1.35rem;border-radius:12px;background:var(--paper);border:1px solid var(--line);text-decoration:none;color:inherit;transition:transform .25s var(--ease-out),border-color .25s var(--ease-out),box-shadow .25s var(--ease-out)}
+.cstrip-list a:hover{transform:translateY(-2px);border-color:rgba(42,92,69,.3);box-shadow:var(--shadow-soft)}
+.cs-name{font:700 1.15rem/1.25 var(--serif);color:var(--dark)}
+.cs-txt{font-size:.88rem;color:var(--text2);line-height:1.5}
+
+/* ---------- Lender marquee ---------- */
+.marquee{position:relative;overflow:hidden;margin-top:clamp(2.5rem,5vw,3.5rem);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;width:max-content;animation:hle-marquee 70s linear infinite}
+.marquee:hover .marquee-track,.marquee:focus-within .marquee-track{animation-play-state:paused}
+.marquee-list{list-style:none;display:flex;gap:1rem;padding-right:1rem}
+.marquee-list li{flex:0 0 auto;display:grid;place-items:center;height:84px;min-width:168px;padding:0 1.5rem;border-radius:12px;background:var(--cream)}
+.marquee-list img{display:block;height:32px;width:auto;max-width:150px;filter:grayscale(1);opacity:.62;transition:filter .3s var(--ease-out),opacity .3s var(--ease-out)}
+.marquee-list li:hover img{filter:none;opacity:1}
+@keyframes hle-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.lenders-note{margin-top:1.5rem;font-size:.82rem;color:rgba(255,255,255,.55)}
+
+/* ---------- Reviews ---------- */
+.rv{background:var(--paper)}
+.rv-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem 3rem;flex-wrap:wrap}
+.rv-grid{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:clamp(2rem,4vw,3rem)}
+.rv-card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:1.5rem;box-shadow:var(--shadow-soft)}
+.rv-card--ph{border-style:dashed}
+.rv-top{display:flex;align-items:center;gap:.8rem}
+.rv-avatar{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--cream);color:var(--text2);font-weight:600}
+.rv-name{font-weight:600;color:var(--dark);font-size:.95rem}
+.rv-date{font-size:.8rem;color:var(--text2)}
+.rv-stars{display:flex;gap:2px;margin-top:1rem}
+.rv-stars svg{width:17px;height:17px;fill:#e8b26a}
+.rv-text{margin-top:.75rem;line-height:1.7;color:var(--text2);font-style:italic}
+
+@media (max-width:1024px){
+  .rv-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .how-grid{grid-template-columns:1fr}
+  .how-item,.how-item+.how-item{padding:1.75rem 0;border-left:0;border-bottom:1px solid var(--line)}
+  .rv-grid{grid-template-columns:1fr}
+  .marquee-list li{height:72px;min-width:140px;padding:0 1.1rem}
+  .marquee-list img{height:28px}
+}
+@media (prefers-reduced-motion:reduce){
+  .marquee{-webkit-mask-image:none;mask-image:none}
+  .marquee-track{animation:none;width:auto}
+  .marquee-list{flex-wrap:wrap;justify-content:center;padding-right:0}
+  .marquee-list[aria-hidden="true"]{display:none}
 }

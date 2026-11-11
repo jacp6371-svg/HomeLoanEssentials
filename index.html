@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-AU">
 <head>
 <title>Home Loan Essentials | Mortgage Broker Gold Coast &amp; Nationwide</title>
 
@@ -13,8 +13,10 @@
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://www.homeloanessentials.com.au/"/>
 <meta property="og:image" content="https://www.homeloanessentials.com.au/images/share.jpg"/>
+<meta property="og:locale" content="en_AU"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <link rel="canonical" href="https://www.homeloanessentials.com.au/"/>
-<link rel="preload" as="image" href="images/hero-poster.jpg" fetchpriority="high"/>
+<link rel="preload" as="image" href="/images/hero-poster.jpg" fetchpriority="high"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -43,7 +45,7 @@
     "@type": "Country",
     "name": "Australia"
   },
-  "serviceType": ["Home Loans", "First Home Buyer Loans", "Refinancing", "Investment Loans"],
+  "serviceType": ["Home Loans", "First Home Buyer Loans", "Construction Loans", "Refinancing", "Investment Loans", "Business Loans", "Asset Finance", "Commercial Property Loans", "Low Doc Loans", "SMSF Loans", "Debt Consolidation"],
   "priceRange": "Free consultation",
   "openingHours": "Mo-Su 00:00-23:59",
   "sameAs": [
@@ -53,32 +55,110 @@
 }
 </script>
 <meta name="theme-color" content="#1c2b27"/>
-<link rel="stylesheet" href="assets/site.css"/>
-<link rel="stylesheet" href="assets/home.css"/>
+<link rel="stylesheet" href="/assets/base.css"/>
+<link rel="stylesheet" href="/assets/site.css"/>
+<link rel="stylesheet" href="/assets/home.css"/>
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
+<!-- @header -->
 <a class="skip-link" href="#main">Skip to content</a>
-<nav class="site-nav" aria-label="Main">
-  <a href="index.html" class="nav-logo" aria-label="Home Loan Essentials, home page"><img src="images/logo.webp" alt="Home Loan Essentials" width="120" height="38"/></a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="diy.html">DIY Home Loan</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="resources.html">Resources</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-    <li class="nav-menu-call"><a href="tel:0478938981">Call Jack &middot; 0478 938 981</a></li>
-  </ul>
-  <a href="tel:0478938981" class="nav-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0478 938 981</a>
-  <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
-</nav>
+<header class="site-header" id="siteHeader">
+  <div class="hd-bar">
+    <a href="/" class="hd-logo" aria-label="Home Loan Essentials, home page"><img src="/images/logo.webp" alt="Home Loan Essentials" width="120" height="38"/></a>
+    <nav class="hd-nav" id="hdNav" aria-label="Main">
+      <ul class="hd-menu">
+        <li class="hd-item hd-item--mega has-drop">
+          <button class="hd-top" type="button" aria-expanded="false" aria-controls="dd-services">Services <svg class="hd-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+          <div class="hd-drop hd-drop--wide" id="dd-services">
+            <div class="hd-cols" style="--cols:3">
+              <div>
+                <p class="hd-h">Home Loans</p>
+                <ul>
+                  <li><a href="/services/buying-a-home.html">Buying a Home</a></li>
+                  <li><a href="/services/first-home-buyers.html">Becoming a First Home Buyer</a></li>
+                  <li><a href="/services/building-a-new-home.html">Building a New Home</a></li>
+                  <li><a href="/services/refinancing.html">Refinancing</a></li>
+                  <li><a href="/services/investing-in-property.html">Investing in Property</a></li>
+                </ul>
+              </div>
+              <div>
+                <p class="hd-h">Business Loans</p>
+                <ul>
+                  <li><a href="/services/asset-equipment-finance.html">Asset &amp; Equipment Finance</a></li>
+                  <li><a href="/services/business-finance.html">Business Finance</a></li>
+                  <li><a href="/services/commercial-property-finance.html">Commercial Property Finance</a></li>
+                </ul>
+              </div>
+              <div>
+                <p class="hd-h">Specialist Lending</p>
+                <ul>
+                  <li><a href="/services/self-employed-low-doc-loans.html">Self-Employed &amp; Low Doc Loans</a></li>
+                  <li><a href="/services/foreign-investment-finance.html">Foreign Investment Finance</a></li>
+                  <li><a href="/services/professional-packages.html">Professional Packages<small>Reduced or waived LMI for eligible professionals</small></a></li>
+                  <li><a href="/services/debt-consolidation.html">Debt Consolidation</a></li>
+                  <li><a href="/services/construction-land-loans.html">Construction &amp; Land Loans</a></li>
+                  <li><a href="/services/smsf-loans.html">SMSF Loans</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="hd-item"><a class="hd-top" href="/diy.html">DIY Home Loan</a></li>
+        <li class="hd-item has-drop">
+          <button class="hd-top" type="button" aria-expanded="false" aria-controls="dd-resources">Resources &amp; Tools <svg class="hd-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+          <div class="hd-drop" id="dd-resources" style="min-width:460px">
+            <div class="hd-cols" style="--cols:2">
+              <div>
+                <p class="hd-h">Calculators</p>
+                <ul>
+                  <li><a href="/calculators/borrowing-power.html">Borrowing Power</a></li>
+                  <li><a href="/calculators/loan-repayments.html">Loan Repayments</a></li>
+                  <li><a href="/calculators/amortisation.html">Amortisation Schedule</a></li>
+                  <li><a href="/calculators/rent-vs-buy.html">Rent vs Buy</a></li>
+                  <li><a href="/calculators/dead-money.html">Dead Money</a></li>
+                  <li><a href="/calculators/stamp-duty.html">Stamp Duty</a></li>
+                  <li><a href="/calculators/lmi.html">Lenders Mortgage Insurance</a></li>
+                </ul>
+              </div>
+              <div>
+                <p class="hd-h">Learn</p>
+                <ul>
+                  <li><a href="/resources.html">Articles<small>Guides, schemes and videos</small></a></li>
+                  <li><a href="/faq.html">FAQ<small>Common home loan questions</small></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="hd-item"><a class="hd-top" href="/about.html">About</a></li>
+        <li class="hd-item has-drop">
+          <button class="hd-top" type="button" aria-expanded="false" aria-controls="dd-contact">Get in Touch <svg class="hd-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+          <div class="hd-drop hd-drop--right" id="dd-contact">
+            <ul>
+              <li><a href="/#contact">Send a quick enquiry<small>Jack replies personally within 24 hours</small></a></li>
+              <!-- TODO (Jack): point this at your booking tool (Calendly, Cal.com etc.). Change BOOKING_URL in tools/build.py and run it. -->
+              <li><a href="/#contact" data-booking>Book a free consultation<small>No obligation, in person or by video</small></a></li>
+              <li><a href="tel:0478938981">Call Jack &middot; 0478 938 981<small>Available anytime</small></a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <p class="hd-menu-call"><a href="tel:0478938981">Call Jack &middot; 0478 938 981</a></p>
+    </nav>
+    <a href="tel:0478938981" class="hd-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Call Jack</span><span class="hd-call-num">&middot; 0478 938 981</span></a>
+    <button class="hd-toggle" id="hdToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="hdNav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<!-- /@header -->
 <main id="main">
 
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-media" aria-hidden="true">
-    <video autoplay muted loop playsinline preload="metadata" poster="images/hero-poster.jpg">
-      <source src="videos/hero-bg.mp4" type="video/mp4"/>
+    <video autoplay muted loop playsinline preload="metadata" poster="/images/hero-poster.jpg">
+      <source src="/videos/hero-bg.mp4" type="video/mp4"/>
     </video>
   </div>
   <div class="wrap hero-body">
@@ -89,7 +169,8 @@
       <p class="hero-sub">We compare 30+ lenders to find the right home loan for your situation, then look after the process from application to settlement.</p>
       <div class="hero-btns">
         <a href="tel:0478938981" class="btn-green">Call Jack &middot; 0478 938 981</a>
-        <a href="#contact" class="btn-line btn-line--light">Book a Consultation</a>
+        <!-- TODO (Jack): point data-booking links at your booking page once you have one. -->
+        <a href="#contact" class="btn-line btn-line--light" data-booking>Book a Consultation</a>
       </div>
     </div>
     <ul class="hero-facts" data-enter style="--i:4">
@@ -107,21 +188,22 @@
     <div class="svc-intro">
       <p class="eyebrow">The Essential Portfolio</p>
       <h2 class="h2">Services Built on <em>Experience</em></h2>
-      <p class="lead">Four loan services backed by four generations of banking knowledge and 30+ lender relationships.</p>
-      <div class="svc-photo"><img src="images/aerial-22.webp" alt="Aerial view of rooftops and streets in a coastal suburb" width="1280" height="720" loading="lazy"/></div>
+      <p class="lead">Home, investment, business and specialist lending, backed by four generations of banking knowledge and 30+ lender relationships.</p>
+      <a href="/services/self-employed-low-doc-loans.html" class="svc-more">See all specialist lending <span aria-hidden="true">&rarr;</span></a>
+      <div class="svc-photo"><img src="/images/aerial-22.webp" alt="Aerial view of rooftops and streets in a coastal suburb" width="1280" height="720" loading="lazy"/></div>
     </div>
     <ol class="svc-list">
-      <li class="svc-row"><a href="#contact" data-service="Home Loan">
+      <li class="svc-row"><a href="/services/buying-a-home.html">
         <span class="svc-num">01</span>
         <div>
-          <p class="svc-kicker">Buying, upgrading or building.</p>
-          <h3>Home Loans</h3>
+          <p class="svc-kicker">Buying, upgrading or downsizing.</p>
+          <h3>Buying a Home</h3>
           <p>We compare 30+ lenders to find the right rate and structure for your situation.</p>
           <ul class="svc-tags"><li>Access to 30+ lenders</li><li>Fixed and variable rates</li><li>Pre-approval support</li><li>End-to-end guidance</li></ul>
         </div>
         <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a></li>
-      <li class="svc-row"><a href="#contact" data-service="First Home Buyer">
+      <li class="svc-row"><a href="/services/first-home-buyers.html">
         <span class="svc-num">02</span>
         <div>
           <p class="svc-kicker">Step onto the ladder.</p>
@@ -131,8 +213,18 @@
         </div>
         <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a></li>
-      <li class="svc-row"><a href="#contact" data-service="Refinancing">
+      <li class="svc-row"><a href="/services/building-a-new-home.html">
         <span class="svc-num">03</span>
+        <div>
+          <p class="svc-kicker">House and land, or knock down and rebuild.</p>
+          <h3>Building a New Home</h3>
+          <p>Construction loans pay your builder in stages. We line up the loan, the lender and the paperwork so the build keeps moving.</p>
+          <ul class="svc-tags"><li>Construction loans</li><li>Progress payments</li><li>Land and build packages</li><li>Builder liaison</li></ul>
+        </div>
+        <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a></li>
+      <li class="svc-row"><a href="/services/refinancing.html">
+        <span class="svc-num">04</span>
         <div>
           <p class="svc-kicker">Already have a home loan?</p>
           <h3>Refinancing</h3>
@@ -141,8 +233,8 @@
         </div>
         <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a></li>
-      <li class="svc-row"><a href="#contact" data-service="Investment Loan">
-        <span class="svc-num">04</span>
+      <li class="svc-row"><a href="/services/investing-in-property.html">
+        <span class="svc-num">05</span>
         <div>
           <p class="svc-kicker">Grow your portfolio.</p>
           <h3>Investment Loans</h3>
@@ -151,6 +243,43 @@
         </div>
         <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a></li>
+      <li class="svc-row"><a href="/services/business-finance.html">
+        <span class="svc-num">06</span>
+        <div>
+          <p class="svc-kicker">Business owners and the self-employed.</p>
+          <h3>Business &amp; Specialist Lending</h3>
+          <p>Business, equipment and commercial property finance, plus low doc, SMSF and professional packages when a standard loan does not fit.</p>
+          <ul class="svc-tags"><li>Self-employed and low doc</li><li>Asset and equipment finance</li><li>Commercial property</li><li>SMSF and professional packages</li></ul>
+        </div>
+        <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="sec how" id="how">
+  <div class="wrap">
+    <div class="how-head">
+      <p class="eyebrow">How We Work</p>
+      <h2 class="h2">Simple, honest and <em>on your side</em></h2>
+    </div>
+    <ol class="how-grid">
+      <li class="how-item">
+        <span class="how-num">01</span>
+        <h3>A free, no-obligation chat</h3>
+        <p>Tell Jack what you are trying to do. He will tell you honestly what is possible, what it might cost and what to do next. No cost, no pressure.</p>
+      </li>
+      <li class="how-item">
+        <span class="how-num">02</span>
+        <h3>Working with your team</h3>
+        <p>Jack works alongside your accountant, solicitor and builder so everyone is on the same page and nothing falls through the gaps.</p>
+      </li>
+      <li class="how-item">
+        <span class="how-num">03</span>
+        <h3>30+ lenders compared</h3>
+        <p>Banks, credit unions and non-bank lenders, so the recommendation fits your situation rather than one bank's product list.</p>
+      </li>
     </ol>
   </div>
 </section>
@@ -162,7 +291,7 @@
       <p class="eyebrow">Getting Fitter Financially</p>
       <h2 class="h2">The <em>DIY Home Loan</em></h2>
       <p class="lead">A smarter, structured approach to your home loan that recycles your money, paying down debt faster while building wealth at the same time.</p>
-      <a href="diy.html" class="btn-green">Explore the DIY Home Loan <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
+      <a href="/diy.html" class="btn-green">Explore the DIY Home Loan <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="flow" aria-label="How the DIY Home Loan is structured, example scenario">
       <span class="flow-badge">Example Scenario</span>
@@ -190,7 +319,7 @@
   <div class="wrap">
     <div class="about-grid">
       <div class="about-photo">
-        <picture><source srcset="images/jack-perkins.webp" type="image/webp"/><img src="images/jack-perkins.jpg" alt="Jack Perkins, finance broker at Home Loan Essentials" width="900" height="1200" loading="lazy"/></picture>
+        <picture><source srcset="/images/jack-perkins.webp" type="image/webp"/><img src="/images/jack-perkins.jpg" alt="Jack Perkins, finance broker at Home Loan Essentials" width="900" height="1200" loading="lazy"/></picture>
         <div class="about-name"><strong>Jack Perkins</strong><span>Finance Broker &middot; Home Loan Essentials</span></div>
       </div>
       <div class="about-copy">
@@ -231,12 +360,26 @@
   </div>
 </section>
 
+<!-- CALCULATORS -->
+<section class="cstrip" id="calculators" aria-labelledby="cs-title">
+  <div class="wrap">
+    <div class="cstrip-head">
+      <div>
+        <p class="eyebrow">Free Calculators</p>
+        <h2 class="h2" id="cs-title">Run the <em>numbers</em></h2>
+      </div>
+      <a href="/calculators/" class="btn-line">All calculators</a>
+    </div>
+    <ul class="cstrip-list"><li><a href="/calculators/borrowing-power.html"><span class="cs-name">Borrowing Power</span><span class="cs-txt">How much could you borrow?</span></a></li><li><a href="/calculators/loan-repayments.html"><span class="cs-name">Loan Repayments</span><span class="cs-txt">Weekly, fortnightly or monthly.</span></a></li><li><a href="/calculators/stamp-duty.html"><span class="cs-name">Stamp Duty</span><span class="cs-txt">Every state, QLD by default.</span></a></li><li><a href="/calculators/rent-vs-buy.html"><span class="cs-name">Rent vs Buy</span><span class="cs-txt">Which leaves you ahead?</span></a></li><li><a href="/calculators/amortisation.html"><span class="cs-name">Amortisation</span><span class="cs-txt">See extra repayments at work.</span></a></li><li><a href="/calculators/dead-money.html"><span class="cs-name">Dead Money</span><span class="cs-txt">Rent versus interest, honestly.</span></a></li><li><a href="/calculators/lmi.html"><span class="cs-name">LMI Estimate</span><span class="cs-txt">Indicative mortgage insurance.</span></a></li></ul>
+  </div>
+</section>
+
 <!-- NATIONWIDE -->
 <section class="sec nw" id="nationwide">
   <div class="wrap">
     <div class="nw-grid">
       <div class="nw-map">
-        <picture><source srcset="images/australia.webp" type="image/webp"/><img src="images/australia.png" alt="Map of Australia with Helensvale on the Gold Coast marked" width="837" height="801" loading="lazy"/></picture>
+        <picture><source srcset="/images/australia.webp" type="image/webp"/><img src="/images/australia.png" alt="Map of Australia with Helensvale on the Gold Coast marked" width="837" height="801" loading="lazy"/></picture>
         <span class="nw-pin" aria-hidden="true"><span class="nw-pin-dot"></span><span class="nw-pin-label">Helensvale</span></span>
       </div>
       <div class="nw-copy">
@@ -256,7 +399,6 @@
   </div>
 </section>
 
-<!-- <li>Westpac</li><li>ANZ</li><li>NAB</li><li>ubank</li><li>AMP</li><li>Bankwest</li><li>St George</li><li>BOQ</li><li>Bendigo Bank</li><li>ME Bank</li><li>Bank Australia</li><li>Auswide Bank</li><li>Pepper Money</li><li>Liberty</li><li>La Trobe</li><li>Resimac</li><li>Firstmac</li><li>Beyond Bank</li><li>RedZed</li><li>Paramount</li><li>Suncorp</li><li>Macquarie</li><li>Qudos Bank</li><li>Prime Capital</li><li>Mortgage House</li><li>ING</li><li>CBA</li><li>Mortgage Street</li><li>MA Money</li> -->
 <section class="sec lenders on-dark" id="lenders">
   <div class="wrap">
     <div class="lenders-head">
@@ -266,8 +408,47 @@
       </div>
       <p class="lead">We compare home loan options across a broad panel of banks, credit unions, and non-bank lenders to find the right fit for you.</p>
     </div>
-    <ul class="lender-wall">
-      <li>Westpac</li><li>ANZ</li><li>NAB</li><li>ubank</li><li>AMP</li><li>Bankwest</li><li>St George</li><li>BOQ</li><li>Bendigo Bank</li><li>ME Bank</li><li>Bank Australia</li><li>Auswide Bank</li><li>Pepper Money</li><li>Liberty</li><li>La Trobe</li><li>Resimac</li><li>Firstmac</li><li>Beyond Bank</li><li>RedZed</li><li>Paramount</li><li>Suncorp</li><li>Macquarie</li><li>Qudos Bank</li><li>Prime Capital</li><li>Mortgage House</li><li>ING</li><li>CBA</li><li>Mortgage Street</li><li>MA Money</li>
+    <!-- Lender logos live in /images/lenders/. The current files are text placeholders: replace each with the lender's
+     official logo (same file name, SVG or WebP) once you have permission to use it. Order: Westpac, ANZ, NAB, ubank, then the rest. -->
+    <div class="marquee" aria-label="Some of the lenders on our panel">
+      <div class="marquee-track">
+        <ul class="marquee-list"><li><img src="/images/lenders/westpac.svg" alt="Westpac" width="108" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/anz.svg" alt="ANZ" width="90" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/nab.svg" alt="NAB" width="90" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/ubank.svg" alt="ubank" width="90" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/amp.svg" alt="AMP" width="90" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/bankwest.svg" alt="Bankwest" width="120" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/st-george.svg" alt="St George" width="131" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/boq.svg" alt="BOQ" width="90" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/bendigo-bank.svg" alt="Bendigo Bank" width="166" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/me-bank.svg" alt="ME Bank" width="108" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/bank-australia.svg" alt="Bank Australia" width="189" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/auswide-bank.svg" alt="Auswide Bank" width="166" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/pepper-money.svg" alt="Pepper Money" width="166" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/liberty.svg" alt="Liberty" width="108" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/la-trobe.svg" alt="La Trobe" width="120" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/resimac.svg" alt="Resimac" width="108" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/firstmac.svg" alt="Firstmac" width="120" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/beyond-bank.svg" alt="Beyond Bank" width="154" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/redzed.svg" alt="RedZed" width="97" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/paramount.svg" alt="Paramount" width="131" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/suncorp.svg" alt="Suncorp" width="108" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/macquarie.svg" alt="Macquarie" width="131" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/qudos-bank.svg" alt="Qudos Bank" width="143" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/prime-capital.svg" alt="Prime Capital" width="177" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/mortgage-house.svg" alt="Mortgage House" width="189" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/ing.svg" alt="ING" width="90" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/cba.svg" alt="CBA" width="90" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/mortgage-street.svg" alt="Mortgage Street" width="200" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/ma-money.svg" alt="MA Money" width="120" height="40" loading="lazy" decoding="async"/></li></ul>
+        <ul class="marquee-list" aria-hidden="true"><li><img src="/images/lenders/westpac.svg" alt="" width="108" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/anz.svg" alt="" width="90" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/nab.svg" alt="" width="90" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/ubank.svg" alt="" width="90" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/amp.svg" alt="" width="90" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/bankwest.svg" alt="" width="120" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/st-george.svg" alt="" width="131" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/boq.svg" alt="" width="90" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/bendigo-bank.svg" alt="" width="166" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/me-bank.svg" alt="" width="108" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/bank-australia.svg" alt="" width="189" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/auswide-bank.svg" alt="" width="166" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/pepper-money.svg" alt="" width="166" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/liberty.svg" alt="" width="108" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/la-trobe.svg" alt="" width="120" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/resimac.svg" alt="" width="108" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/firstmac.svg" alt="" width="120" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/beyond-bank.svg" alt="" width="154" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/redzed.svg" alt="" width="97" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/paramount.svg" alt="" width="131" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/suncorp.svg" alt="" width="108" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/macquarie.svg" alt="" width="131" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/qudos-bank.svg" alt="" width="143" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/prime-capital.svg" alt="" width="177" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/mortgage-house.svg" alt="" width="189" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/ing.svg" alt="" width="90" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/cba.svg" alt="" width="90" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/mortgage-street.svg" alt="" width="200" height="40" loading="lazy" decoding="async"/></li><li><img src="/images/lenders/ma-money.svg" alt="" width="120" height="40" loading="lazy" decoding="async"/></li></ul>
+      </div>
+    </div>
+    <p class="lenders-note">A selection of lenders on our panel. The panel and the products each lender offers can change.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS
+     TODO (Jack): replace the three placeholder cards with real Google reviews (copy the reviewer's first name, the date and the
+     wording exactly, with their permission), and put your Google Business Profile reviews link in the button below.
+     Do not publish this section with placeholders. -->
+<section class="sec rv" id="reviews" aria-labelledby="rv-title">
+  <div class="wrap">
+    <div class="rv-head">
+      <div>
+        <p class="eyebrow">Google Reviews</p>
+        <h2 class="h2" id="rv-title">What our clients <em>say</em></h2>
+      </div>
+      <a href="#reviews" class="btn-line" data-todo="google-reviews-link">Read our Google reviews</a>
+    </div>
+    <ul class="rv-grid">
+      <li class="rv-card rv-card--ph">
+        <div class="rv-top"><span class="rv-avatar" aria-hidden="true">?</span><div><p class="rv-name">Client name</p><p class="rv-date">Google review</p></div></div>
+        <div class="rv-stars" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg></div>
+        <p class="rv-text">Placeholder. A real Google review from a client will go here.</p>
+      </li>
+      <li class="rv-card rv-card--ph">
+        <div class="rv-top"><span class="rv-avatar" aria-hidden="true">?</span><div><p class="rv-name">Client name</p><p class="rv-date">Google review</p></div></div>
+        <div class="rv-stars" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg></div>
+        <p class="rv-text">Placeholder. A real Google review from a client will go here.</p>
+      </li>
+      <li class="rv-card rv-card--ph">
+        <div class="rv-top"><span class="rv-avatar" aria-hidden="true">?</span><div><p class="rv-name">Client name</p><p class="rv-date">Google review</p></div></div>
+        <div class="rv-stars" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg></div>
+        <p class="rv-text">Placeholder. A real Google review from a client will go here.</p>
+      </li>
     </ul>
   </div>
 </section>
@@ -312,9 +493,13 @@
               <option value="">Select a service</option>
               <option>Home Loan</option>
               <option>First Home Buyer</option>
+              <option>Building</option>
               <option>Refinancing</option>
               <option>Investment Loan</option>
+              <option>Business Loans</option>
+              <option>Specialist Lending</option>
               <option>DIY Home Loan</option>
+              <option>Not sure yet</option>
             </select>
           </div>
         </div>
@@ -334,14 +519,16 @@
 
 <!-- TAKE IT TO THE LIMIT -->
 <section class="limit" id="limit">
-  <div class="limit-media" aria-hidden="true"><img src="images/aerial-18.webp" alt="" width="1280" height="720" loading="lazy"/></div>
+  <div class="limit-media" aria-hidden="true"><img src="/images/aerial-18.webp" alt="" width="1280" height="720" loading="lazy"/></div>
   <div class="wrap">
     <h2 class="limit-title">Take It To <span>The Limit</span></h2>
     <div class="limit-row">
       <p>Home Loan Essentials &middot; Helensvale, Gold Coast</p>
       <div class="hero-btns">
         <a href="tel:0478938981" class="btn-green">Call Jack &middot; 0478 938 981</a>
-        <a href="#contact" class="btn-line btn-line--light">Book a Consultation</a>
+        <!-- TODO (Jack): point data-booking links at your booking page once you have one. -->
+        <a href="#contact" class="btn-line btn-line--light" data-booking>Book a Consultation</a>
+        <a href="#contact" class="btn-line btn-line--light">Start Your Enquiry</a>
       </div>
     </div>
   </div>
@@ -349,44 +536,75 @@
 
 </main>
 
+<!-- @footer -->
 <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="index.html" aria-label="Home Loan Essentials, home page"><img src="images/logo.webp" alt="Home Loan Essentials" width="126" height="40" loading="lazy"/></a>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <a href="/" aria-label="Home Loan Essentials, home page"><img src="/images/logo.webp" alt="Home Loan Essentials" width="126" height="40" loading="lazy"/></a>
       <p class="footer-tagline">Take It To The Limit</p>
+      <p class="ft-blurb">Mortgage broker based in Helensvale on the Gold Coast, helping clients in every state and territory.</p>
+      <div class="ft-social">
+        <a href="https://www.linkedin.com/in/jack-perkins-homeloanessentials/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://www.instagram.com/homeloanessentials/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
+      </div>
     </div>
-    <div class="footer-cols">
-      <div class="footer-col">
-        <h2>Contact</h2>
-        <ul>
-          <li><a href="tel:0478938981">0478 938 981</a></li>
-          <li><a href="mailto:jack@homeloanessentials.com.au">jack@homeloanessentials.com.au</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h2>Follow</h2>
-        <ul>
-          <li><a href="https://www.linkedin.com/in/jack-perkins-homeloanessentials/" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://www.instagram.com/homeloanessentials/" target="_blank" rel="noopener">Instagram</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h2>Legal</h2>
-        <ul>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms &amp; Conditions</a></li>
-        </ul>
-      </div>
+    <div class="footer-col">
+      <h2>Services</h2>
+      <ul>
+        <li><a href="/services/buying-a-home.html">Buying a Home</a></li>
+        <li><a href="/services/first-home-buyers.html">First Home Buyers</a></li>
+        <li><a href="/services/building-a-new-home.html">Building a New Home</a></li>
+        <li><a href="/services/refinancing.html">Refinancing</a></li>
+        <li><a href="/services/investing-in-property.html">Investing in Property</a></li>
+        <li><a href="/services/business-finance.html">Business Loans</a></li>
+        <li><a href="/services/self-employed-low-doc-loans.html">Specialist Lending</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2>Resources &amp; Tools</h2>
+      <ul>
+        <li><a href="/calculators/borrowing-power.html">Borrowing Power</a></li>
+        <li><a href="/calculators/loan-repayments.html">Loan Repayments</a></li>
+        <li><a href="/calculators/stamp-duty.html">Stamp Duty</a></li>
+        <li><a href="/diy.html">DIY Home Loan</a></li>
+        <li><a href="/resources.html">Articles</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2>Contact</h2>
+      <ul>
+        <li><a href="tel:0478938981">0478 938 981</a></li>
+        <li><a href="mailto:jack@homeloanessentials.com.au">jack@homeloanessentials.com.au</a></li>
+        <li><a href="/#contact">Send an enquiry</a></li>
+        <li><a href="/#contact" data-booking>Book a consultation</a></li>
+      </ul>
+      <p>Helensvale, Gold Coast QLD<br/>Available anytime</p>
+    </div>
+    <div class="footer-col">
+      <h2>Legal</h2>
+      <ul>
+        <li><a href="/credit-guide.html">Credit Guide</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+      </ul>
     </div>
   </div>
-  <div class="footer-legal">
-    <p>&copy; 2026 Home Loan Essentials Pty Ltd. All rights reserved. Helensvale, Gold Coast QLD.</p>
-    <p>Australian Credit Licence &middot; ABN available on request</p>
+  <div class="ft-legal">
+    <p class="ft-warning"><strong>General information only.</strong> The information on this website is general in nature and does not take into account your objectives, financial situation or needs. Before acting on it, consider whether it is right for you. Interest rates, fees and charges change, so confirm current rates and terms with the lender. Lending criteria, terms, conditions, fees and charges apply. Calculator results are estimates only, not a quote or an approval. Please read our <a href="/credit-guide.html">Credit Guide</a> and <a href="/privacy.html">Privacy Policy</a>.</p>
+    <!-- TODO (Jack): replace the placeholders below with your real Credit Representative Number, your licensee's name and their Australian Credit Licence number. Do not publish until these are filled in. -->
+    <p>Jack Perkins (CRN: XXXXXX) is an Authorised Credit Representative of [Licensee name] (ACL: XXXXXX).</p>
+    <div class="ft-row">
+      <p>&copy; 2026 Home Loan Essentials Pty Ltd. All rights reserved. Helensvale, Gold Coast QLD.</p>
+      <p>Lender panel and products can change.</p>
+    </div>
   </div>
 </footer>
+<!-- /@footer -->
 
-<script src="assets/site.js" defer></script>
-<script src="assets/contact.js"></script>
-<script src="assets/home.js" defer></script>
+<script src="/assets/site.js" defer></script>
+<script src="/assets/track.js" defer></script>
+<script src="/assets/contact.js"></script>
+<script src="/assets/home.js" defer></script>
 </body>
 </html>

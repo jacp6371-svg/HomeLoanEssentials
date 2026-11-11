@@ -2,22 +2,147 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.homeloanessentials.com.au/</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-11</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.homeloanessentials.com.au/about.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.homeloanessentials.com.au/diy.html</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-11</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.homeloanessentials.com.au/faq.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.homeloanessentials.com.au/resources.html</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-11</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/calculators/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/services/buying-a-home.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/services/first-home-buyers.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/services/building-a-new-home.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/services/refinancing.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/services/investing-in-property.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/services/asset-equipment-finance.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/services/business-finance.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/services/commercial-property-finance.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/services/self-employed-low-doc-loans.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/services/foreign-investment-finance.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/services/professional-packages.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/services/debt-consolidation.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/services/construction-land-loans.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/services/smsf-loans.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/calculators/borrowing-power.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/calculators/loan-repayments.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/calculators/amortisation.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/calculators/rent-vs-buy.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/calculators/dead-money.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/calculators/stamp-duty.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/calculators/lmi.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/privacy.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.homeloanessentials.com.au/terms.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.3</priority>
   </url>
 </urlset>
