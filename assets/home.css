@@ -155,12 +155,10 @@ nav.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-
 .lenders-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem 4rem;flex-wrap:wrap}
 .lenders-head .lead{max-width:28rem}
 .lender-wall{list-style:none;display:flex;flex-wrap:wrap;align-items:baseline;gap:.15rem 0;margin-top:clamp(3rem,6vw,4.5rem);font:400 clamp(1.5rem,3.2vw,2.6rem)/1.35 var(--serif)}
-.lender-wall li{color:rgba(255,255,255,.4);transition:color .25s var(--ease-out)}
+.lender-wall li{color:rgba(255,255,255,.7);transition:color .25s var(--ease-out)}
 .lender-wall li:hover{color:var(--white)}
 .lender-wall li::after{content:'/';margin:0 .6em;color:rgba(143,201,168,.35)}
 .lender-wall li:last-child::after{content:none}
-.lender-wall li:nth-child(5n+1){color:rgba(255,255,255,.78)}
-.lender-wall li:nth-child(5n+1):hover{color:var(--white)}
 
 /* ---------- Contact ---------- */
 .contact{background:var(--cream)}
