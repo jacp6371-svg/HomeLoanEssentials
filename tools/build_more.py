@@ -225,8 +225,6 @@ def build_about():
       <p class="eyebrow">Working with Duncan</p>
       <h2 class="h2" id="duncan-title">Two generations, <em>one plan</em></h2>
       <p class="lead">Jack's dad, Duncan Perkins, has more than 40 years across banking, finance broking, accounting and financial planning. He is the owner of Tax Time Accountants &amp; Home Loan Essentials.</p>
-      <!-- TODO (Jack): replace these placeholders with real photos of you and Duncan (landscape, at least 1200px wide, saved as .webp in /images/). -->
-      <div class="ph" style="margin-top:2rem" role="img" aria-label="Photo placeholder">Photo to come: Jack and Duncan</div>
     </div>
     <div>
       <p class="lead" style="max-width:none">A home loan rarely sits on its own. It touches your tax, your cash flow, your business and your long-term plans. Because Duncan is a broker, a financial planner and a tax agent, Jack can bring him into the conversation when a loan decision has a tax or planning side to it.</p>
@@ -235,6 +233,7 @@ def build_about():
         <li>Self-employed clients whose income needs an accountant's eye before it goes to a lender.</li>
         <li>Thinking about debt, investing and your own business as one picture, not separate decisions.</li>
       </ul>
+      <p class="fine"><a href="https://www.linkedin.com/in/jack-perkins-homeloanessentials/" target="_blank" rel="noopener">Jack on LinkedIn</a> &middot; <a href="https://www.linkedin.com/in/duncan-perkins/" target="_blank" rel="noopener">Duncan on LinkedIn</a> &middot; <a href="https://www.instagram.com/homeloanessentials/" target="_blank" rel="noopener">Instagram</a></p>
       <p class="fine">Jack also works alongside your own accountant, solicitor and builder if you already have people you trust.</p>
       <a class="callout" style="margin-top:2rem" href="https://www.youtube.com/watch?v=-MDItGVBamI" target="_blank" rel="noopener"><span class="callout-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></span><span><strong class="callout-title">Watch Duncan explain his approach</strong><span class="callout-text">Holistic Financial Advice: Why Your Business Might Be Your Best Investment (YouTube)</span></span><span class="go">{ARROW}</span></a>
     </div>
@@ -251,10 +250,6 @@ def build_about():
       <li class="step"><h3>30+ lenders compared</h3><p>Banks, credit unions and non-bank lenders, so the recommendation fits your situation rather than one lender's product list.</p></li>
       <li class="step"><h3>With you to settlement</h3><p>The same person from the first call to the keys, and still there when it is time to review your loan.</p></li>
     </ol>
-    <div class="info-grid" style="margin-top:3rem">
-      <div class="ph" role="img" aria-label="Photo placeholder">Photo to come: Jack with clients</div>
-      <div class="ph" role="img" aria-label="Photo placeholder">Photo to come: Helensvale office or local area</div>
-    </div>
   </div>
 </section>
 {cta_band()}

@@ -230,27 +230,12 @@ a.cinfo-val:hover{color:var(--green)}
 @keyframes hle-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .lenders-note{margin-top:1.5rem;font-size:.82rem;color:rgba(255,255,255,.55)}
 
-/* ---------- Reviews ---------- */
-.rv{background:var(--paper)}
-.rv-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem 3rem;flex-wrap:wrap}
-.rv-grid{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:clamp(2rem,4vw,3rem)}
-.rv-card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:1.5rem;box-shadow:var(--shadow-soft)}
-.rv-card--ph{border-style:dashed}
-.rv-top{display:flex;align-items:center;gap:.8rem}
-.rv-avatar{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--cream);color:var(--text2);font-weight:600}
-.rv-name{font-weight:600;color:var(--dark);font-size:.95rem}
-.rv-date{font-size:.8rem;color:var(--text2)}
-.rv-stars{display:flex;gap:2px;margin-top:1rem}
-.rv-stars svg{width:17px;height:17px;fill:#e8b26a}
-.rv-text{margin-top:.75rem;line-height:1.7;color:var(--text2);font-style:italic}
 
 @media (max-width:1024px){
-  .rv-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
   .how-grid{grid-template-columns:1fr}
   .how-item,.how-item+.how-item{padding:1.75rem 0;border-left:0;border-bottom:1px solid var(--line)}
-  .rv-grid{grid-template-columns:1fr}
   .marquee-list li{height:72px;min-width:140px;padding:0 1.1rem}
   .marquee-list img{height:28px}
 }
