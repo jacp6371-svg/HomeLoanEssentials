@@ -14,281 +14,10 @@
 <meta property="og:url" content="https://www.homeloanessentials.com.au/"/>
 <meta property="og:image" content="https://www.homeloanessentials.com.au/images/share.jpg"/>
 <link rel="canonical" href="https://www.homeloanessentials.com.au/"/>
-<link rel="preload" as="image" href="images/hero-poster.jpg"/>
+<link rel="preload" as="image" href="images/hero-poster.jpg" fetchpriority="high"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{
-    --cream:#f0ede6;
-    --cream2:#e8e3d9;
-    --dark:#1c2b27;
-    --dark2:#243730;
-    --green:#2a5c45;
-    --green2:#3a7a5c;
-    --green-light:#4a9a72;
-    --green-pale:#e8f5ee;
-    --text:#1c2b27;
-    --text2:#4a5e58;
-    --white:#ffffff;
-    --radius:8px;
-    --tr:0.22s ease;
-  }
-  html{scroll-behavior:smooth}
-  body{font-family:'Inter',sans-serif;color:var(--text);background:var(--cream);line-height:1.6;overflow-x:hidden}
-
-  /* NAV */
-  nav{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    background:rgba(28,43,39,0.97);
-    backdrop-filter:blur(12px);
-    padding:0 2rem;
-    display:flex;align-items:center;justify-content:space-between;
-    height:64px;
-    border-bottom:1px solid rgba(74,154,114,0.15);
-  }
-  .nav-logo img{height:36px;display:block}
-  .nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none}
-  .nav-links a{color:rgba(255,255,255,0.78);text-decoration:none;font-size:0.875rem;font-weight:500;transition:color var(--tr)}
-  .nav-links a:hover,.nav-links a.active{color:var(--green-light)}
-  .nav-cta{
-    background:var(--green);color:var(--white);
-    padding:0.45rem 1.1rem;border-radius:20px;
-    font-size:0.85rem;font-weight:600;text-decoration:none;
-    border:1px solid var(--green2);
-    transition:all var(--tr);
-    display:flex;align-items:center;gap:0.4rem;
-  }
-  .nav-cta:hover{background:var(--green2)}
-  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.5rem}
-  .nav-toggle span{display:block;width:22px;height:2px;background:var(--white);margin:4px 0;transition:all 0.3s}
-
-  /* FOOTER */
-  footer{
-    background:var(--dark);
-    padding:1.5rem 2rem;
-    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
-    border-top:1px solid rgba(74,154,114,0.15);
-  }
-  .footer-left{display:flex;align-items:center;gap:0.75rem}
-  .footer-logo{height:28px}
-  .footer-name{color:var(--green-light);font-size:0.85rem;font-weight:500}
-  .footer-right{text-align:right}
-  footer p{color:rgba(255,255,255,0.4);font-size:0.75rem;line-height:1.6}
-  .footer-tagline{font-family:'Playfair Display',serif;font-style:italic;color:rgba(74,154,114,0.6);font-size:0.78rem;margin-top:0.25rem}
-
-  /* UTILITIES */
-  .container{max-width:1060px;margin:0 auto;padding:0 1.5rem}
-  section{padding:5rem 1.5rem}
-  .eyebrow{font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--green2);margin-bottom:0.6rem}
-  .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:700;color:var(--dark);line-height:1.15;margin-bottom:0.75rem}
-  .section-title .green{color:var(--green2)}
-  .section-sub{color:var(--text2);font-size:1rem;line-height:1.7;font-weight:300;max-width:600px}
-  .btn-green{
-    display:inline-flex;align-items:center;gap:0.4rem;
-    background:var(--green);color:var(--white);
-    padding:0.75rem 1.6rem;border-radius:22px;
-    font-weight:600;font-size:0.88rem;text-decoration:none;
-    border:none;cursor:pointer;font-family:'Inter',sans-serif;
-    transition:all var(--tr);
-  }
-  .btn-green:hover{background:var(--green2);transform:translateY(-1px)}
-  .btn-outline-dark{
-    display:inline-flex;align-items:center;gap:0.4rem;
-    background:transparent;color:var(--dark);
-    padding:0.7rem 1.4rem;border-radius:22px;
-    font-weight:600;font-size:0.85rem;text-decoration:none;
-    border:1.5px solid var(--dark);
-    transition:all var(--tr);
-  }
-  .btn-outline-dark:hover{background:var(--dark);color:var(--white)}
-
-  /* REVEAL */
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.55s ease,transform 0.55s ease}
-  .reveal.visible{opacity:1;transform:translateY(0)}
-
-  /* RESPONSIVE */
-  @media(max-width:768px){
-    .nav-links,.nav-cta{display:none}
-    .nav-links.open{
-      display:flex;flex-direction:column;
-      position:fixed;top:64px;left:0;right:0;
-      background:var(--dark);padding:1.5rem 2rem;
-      border-top:1px solid rgba(74,154,114,0.15);
-      gap:1.25rem;z-index:99;
-    }
-    .nav-toggle{display:block}
-    footer{flex-direction:column;text-align:center}
-    .footer-right{text-align:center}
-  }
-</style>
-
-<style>
-  /* HERO */
-  #hero{
-    min-height:100vh;
-    background:linear-gradient(160deg,var(--dark) 0%,var(--dark2) 60%,#1f3530 100%);
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:7rem 2rem 4rem;position:relative;overflow:hidden;
-  }
-  #hero::before{
-    content:'';position:absolute;inset:0;
-    background:radial-gradient(ellipse at 60% 40%,rgba(74,154,114,0.08) 0%,transparent 70%);
-  }
-  .hero-eyebrow{font-family:'DM Mono',monospace;color:var(--green-light);font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s ease 0.2s forwards}
-  .hero-h1{font-family:'Playfair Display',serif;color:var(--white);font-size:clamp(3rem,6vw,5rem);font-weight:700;line-height:1.08;margin-bottom:1.5rem;max-width:780px;opacity:0;animation:fadeUp 0.8s ease 0.4s forwards}
-  .hero-h1 em{color:var(--green-light);font-style:normal}
-  .hero-sub{color:rgba(255,255,255,0.65);font-size:1.05rem;max-width:580px;margin-bottom:2.5rem;font-weight:300;line-height:1.75;opacity:0;animation:fadeUp 0.8s ease 0.6s forwards}
-  .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeUp 0.8s ease 0.8s forwards}
-  .hero-tag{position:absolute;bottom:2rem;font-family:'Playfair Display',serif;font-style:italic;color:rgba(74,154,114,0.45);font-size:0.8rem;letter-spacing:0.08em}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-
-  /* SERVICES */
-  #services{background:var(--cream);padding:5rem 1.5rem}
-  .svc-header{text-align:center;margin-bottom:3rem}
-  .svc-header .section-sub{margin:0 auto}
-  .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;max-width:1060px;margin:0 auto}
-  .svc-card{
-    background:var(--white);border:1px solid rgba(0,0,0,0.07);
-    border-radius:12px;padding:1.75rem;transition:all var(--tr);
-    position:relative;overflow:hidden;
-  }
-  .svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.1)}
-  .svc-icon{width:40px;height:40px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.1rem}
-  .svc-sub{font-size:0.78rem;color:var(--green2);font-weight:500;margin-bottom:0.6rem}
-  .svc-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--dark);margin-bottom:0.6rem;font-weight:700}
-  .svc-card p{color:var(--text2);font-size:0.87rem;line-height:1.6;margin-bottom:1rem}
-  .svc-list{list-style:none;margin-bottom:1.25rem}
-  .svc-list li{font-size:0.82rem;color:var(--text2);padding:0.25rem 0 0.25rem 1.1rem;position:relative}
-  .svc-list li::before{content:'●';position:absolute;left:0;color:var(--green2);font-size:0.5rem;top:0.45rem}
-  .svc-link{font-size:0.82rem;font-weight:600;color:var(--dark);text-decoration:none;display:inline-flex;align-items:center;gap:0.3rem}
-  .svc-link:hover{color:var(--green2)}
-
-  /* DIY TEASER */
-  #diy-teaser{
-    background:var(--dark);padding:5rem 1.5rem;text-align:center;
-  }
-  #diy-teaser .section-title{color:var(--white)}
-  #diy-teaser .section-sub{color:rgba(255,255,255,0.6);margin:0 auto 2rem}
-
-  /* ABOUT */
-  #about{background:var(--cream);padding:5rem 1.5rem}
-  .about-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:3.5rem}
-  .tl-card{background:var(--white);border:1px solid rgba(0,0,0,0.07);border-radius:10px;padding:1.25rem;font-size:0.85rem}
-  .tl-era{font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text2);margin-bottom:0.4rem}
-  .tl-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:0.1rem}
-  .tl-bank{font-size:0.75rem;color:var(--green2);font-weight:500;margin-bottom:0.6rem}
-  .tl-card p{color:var(--text2);font-size:0.82rem;line-height:1.5}
-  .about-bio-row{display:grid;grid-template-columns:260px 1fr;gap:3rem;align-items:center}
-  .about-photo{width:100%;border-radius:10px;object-fit:cover;aspect-ratio:3/4}
-  .bio-eyebrow{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--green2);margin-bottom:0.4rem}
-  .bio-name{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--dark);margin-bottom:0.1rem}
-  .bio-role{font-size:0.8rem;color:var(--text2);margin-bottom:1.25rem}
-  .bio-text{color:var(--text2);font-size:0.93rem;line-height:1.72;margin-bottom:0.9rem}
-
-  /* NATIONWIDE */
-  #nationwide{background:var(--cream);padding:5rem 1.5rem}
-  .nationwide-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1060px;margin:0 auto}
-  .aus-map{
-    background:var(--white);border:1px solid rgba(0,0,0,0.07);border-radius:12px;
-    padding:2rem;display:flex;align-items:center;justify-content:center;
-  }
-  .aus-map svg{width:100%;max-width:320px;height:auto}
-  .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:1.5rem 0 2rem}
-  .stat-box{background:var(--white);border:1px solid rgba(0,0,0,0.07);border-radius:8px;padding:1rem 1.25rem}
-  .stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--dark);line-height:1}
-  .stat-label{font-size:0.75rem;color:var(--text2);margin-top:0.2rem}
-
-  /* CONTACT */
-  #contact{background:var(--dark);padding:5rem 1.5rem}
-  #contact .section-title{color:var(--white)}
-  #contact .eyebrow{color:var(--green-light)}
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1060px;margin:2rem auto 0}
-  .cinfo-item{display:flex;gap:0.9rem;margin-bottom:1.5rem;align-items:flex-start}
-  .cinfo-icon{width:38px;height:38px;background:rgba(74,154,114,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0}
-  .cinfo-label{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-light);font-weight:600;margin-bottom:0.15rem;font-family:'DM Mono',monospace}
-  .cinfo-val{color:var(--white);font-size:0.95rem;font-weight:500;text-decoration:none}
-  .cinfo-val:hover{color:var(--green-light)}
-  .cinfo-sub{color:rgba(255,255,255,0.5);font-size:0.8rem}
-  .avail-dot{width:8px;height:8px;background:#4ade80;border-radius:50%;display:inline-block;margin-right:0.4rem;animation:pulse 2s infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
-  .form-box{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:2rem}
-  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-  .form-group{margin-bottom:1rem}
-  label{display:block;font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.6);margin-bottom:0.35rem;letter-spacing:0.06em;text-transform:uppercase}
-  input,select,textarea{
-    width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);
-    border-radius:6px;padding:0.65rem 0.9rem;
-    font-family:'Inter',sans-serif;font-size:0.9rem;color:var(--white);outline:none;
-    transition:border-color var(--tr);
-  }
-  input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.3)}
-  input:focus,select:focus,textarea:focus{border-color:var(--green-light);box-shadow:0 0 0 3px rgba(74,154,114,0.12)}
-  select option{background:var(--dark);color:var(--white)}
-  textarea{height:100px;resize:vertical}
-  .btn-submit{
-    width:100%;background:var(--green);color:var(--white);border:none;
-    padding:0.9rem;border-radius:22px;font-size:0.9rem;font-weight:600;
-    cursor:pointer;font-family:'Inter',sans-serif;transition:all var(--tr);margin-top:0.5rem;
-    display:flex;align-items:center;justify-content:center;gap:0.4rem;
-  }
-  .btn-submit:hover{background:var(--green2)}
-  .form-note{text-align:center;font-size:0.75rem;color:rgba(255,255,255,0.35);margin-top:0.75rem}
-
-  /* LENDERS */
-  #lenders{background:var(--cream);padding:4rem 1.5rem;text-align:center}
-  .lender-wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;max-width:900px;margin:2rem auto 0}
-  .lender-chip{
-    background:var(--white);border:1px solid rgba(0,0,0,0.09);border-radius:6px;
-    padding:0.45rem 1rem;font-size:0.82rem;color:var(--dark);font-weight:500;
-    transition:all var(--tr);
-  }
-  .lender-chip:hover{border-color:var(--green2);color:var(--green2)}
-
-  /* TAKE IT TO THE LIMIT */
-  #limit{background:var(--cream);padding:4rem 1.5rem;text-align:center}
-  .limit-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:700;color:var(--dark);line-height:1.1}
-  .limit-title span{color:var(--green2)}
-  .limit-sub{font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.2em;color:var(--text2);margin-top:1rem;text-transform:uppercase}
-  .limit-hr{display:flex;align-items:center;gap:1rem;justify-content:center;margin:0.75rem 0}
-  .limit-hr::before,.limit-hr::after{content:'';flex:1;max-width:80px;height:1px;background:var(--text2);opacity:0.3}
-
-  @media(max-width:900px){
-    .about-timeline{grid-template-columns:1fr 1fr}
-    .nationwide-grid{grid-template-columns:1fr}
-    .contact-grid{grid-template-columns:1fr}
-    .about-bio-row{grid-template-columns:1fr}
-    .aus-map{display:none}
-  }
-  @media(max-width:600px){
-    .svc-grid{grid-template-columns:1fr}
-    .about-timeline{grid-template-columns:1fr}
-    .form-row{grid-template-columns:1fr}
-    .stats-grid{grid-template-columns:1fr 1fr}
-  }
-</style>
-
-<style>
-/* === UPDATES === */
-.hero-video-wrap{position:absolute;inset:0;z-index:0;overflow:hidden}
-.hero-video-wrap video{width:100%;height:100%;object-fit:cover;opacity:0.32;display:block}
-.hero-video-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(28,43,39,0.92) 0%,rgba(28,43,39,0.8) 50%,rgba(31,53,48,0.88) 100%)}
-.hero-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
-.hero-eyebrow{font-family:'DM Mono',monospace;color:var(--green-light);font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:0.75rem;opacity:0;animation:fadeUp 0.8s ease 0.2s forwards}
-.hero-h1{font-family:'Playfair Display',serif;color:var(--white);font-size:clamp(3rem,6vw,5.5rem);font-weight:700;line-height:1;margin-bottom:0.35rem;max-width:820px;opacity:0;animation:fadeUp 0.8s ease 0.4s forwards}
-.hero-h1 em{color:var(--green-light);font-style:normal}
-.hero-tagline{font-family:'Playfair Display',serif;font-style:italic;color:rgba(74,154,114,0.85);font-size:clamp(1.2rem,2.5vw,1.9rem);font-weight:400;margin-bottom:1.75rem;letter-spacing:0.02em;opacity:0;animation:fadeUp 0.8s ease 0.55s forwards}
-.hero-sub{color:rgba(255,255,255,0.65);font-size:1rem;max-width:520px;margin-bottom:2.25rem;font-weight:300;line-height:1.78;opacity:0;animation:fadeUp 0.8s ease 0.7s forwards;text-align:center}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeUp 0.8s ease 0.85s forwards}
-.btn-hero-outline{display:inline-flex;align-items:center;gap:0.4rem;background:transparent;color:var(--white);padding:0.75rem 1.6rem;border-radius:22px;font-weight:600;font-size:0.88rem;text-decoration:none;border:1.5px solid rgba(255,255,255,0.35);transition:all var(--tr);font-family:'Inter',sans-serif}
-.btn-hero-outline:hover{border-color:rgba(255,255,255,0.65);background:rgba(255,255,255,0.06)}
-.svc-icon{color:var(--green2)}
-.svc-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,0.13);border-color:rgba(42,92,69,0.18)}
-.tl-card{border-left:3px solid transparent;transition:border-color var(--tr)}
-.tl-card:hover{border-left-color:var(--green2)}
-@media(max-width:768px){.hero-video-wrap video{opacity:0.2}}
-</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -325,112 +54,7 @@
 </script>
 <meta name="theme-color" content="#1c2b27"/>
 <link rel="stylesheet" href="assets/site.css"/>
-<style>
-/* === REFRESH (index) === */
-#hero{min-height:100vh;min-height:100svh;padding:calc(var(--nav-h) + 3rem) 1.5rem 5.5rem}
-.hero-video-wrap video{opacity:.62}
-.hero-video-overlay{background:linear-gradient(180deg,rgba(23,35,31,.78) 0%,rgba(28,43,39,.62) 38%,rgba(28,43,39,.74) 70%,rgba(23,35,31,.95) 100%),radial-gradient(ellipse at 50% 45%,rgba(28,43,39,.15),rgba(28,43,39,.55) 75%)}
-.hero-eyebrow{letter-spacing:.24em}
-.hero-h1{font-size:clamp(3rem,7vw,6rem);letter-spacing:-.01em;text-shadow:0 2px 30px rgba(0,0,0,.25)}
-.hero-tagline{color:#7fc4a0}
-.hero-sub{color:rgba(255,255,255,.82);font-size:1.05rem;font-weight:400;max-width:540px}
-.hero-scroll{position:absolute;left:50%;bottom:1.75rem;width:26px;height:42px;margin-left:-13px;border:1.5px solid rgba(255,255,255,.35);border-radius:14px;z-index:1;opacity:0;animation:fadeUp .8s ease 1.2s forwards;transition:border-color .2s}
-.hero-scroll:hover{border-color:rgba(255,255,255,.7)}
-.hero-scroll span{position:absolute;left:50%;top:8px;width:3px;height:8px;margin-left:-1.5px;border-radius:2px;background:rgba(255,255,255,.75);animation:scrollCue 2.2s ease-in-out infinite}
-@keyframes scrollCue{0%{transform:translateY(0);opacity:0}25%{opacity:1}70%{transform:translateY(12px);opacity:0}100%{opacity:0}}
-
-section{padding:clamp(4rem,9vw,6.5rem) 1.5rem}
-.svc-header{margin-bottom:3.25rem}
-.svc-grid{gap:1.25rem}
-.svc-card{border:1px solid var(--line);border-radius:14px;padding:1.9rem 1.75rem;display:flex;flex-direction:column;box-shadow:var(--shadow-soft);transition:transform .35s var(--ease-out),box-shadow .35s var(--ease-out),border-color .35s var(--ease-out)}
-.svc-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);border-color:rgba(42,92,69,.2)}
-.svc-icon{width:44px;height:44px;border-radius:10px;margin-bottom:1.25rem}
-.svc-card h3{font-size:1.25rem}
-.svc-list{flex:1}
-.svc-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green-light);top:.78rem}
-.svc-link{align-self:flex-start;min-height:44px;color:var(--green);border-top:1px solid var(--line);padding-top:1rem;width:100%;margin-top:.25rem}
-.svc-link:hover{color:var(--green2)}
-
-#diy-teaser{background:radial-gradient(ellipse at 50% 120%,rgba(74,154,114,.22),transparent 60%),var(--dark)}
-#diy-teaser .section-sub{color:rgba(255,255,255,.72)}
-
-.about-timeline{gap:1rem;position:relative}
-.tl-card{border:1px solid var(--line);border-radius:12px;padding:1.4rem;box-shadow:var(--shadow-soft);border-left:1px solid var(--line);transition:transform .3s var(--ease-out),box-shadow .3s var(--ease-out)}
-.tl-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift);border-left-color:var(--line)}
-.tl-card.tl-today{background:var(--dark);border-color:var(--dark)}
-.tl-card.tl-today .tl-era{color:rgba(255,255,255,.55)}
-.tl-card.tl-today .tl-name{color:var(--white)}
-.tl-card.tl-today .tl-bank{color:#7fc4a0}
-.tl-card.tl-today p{color:rgba(255,255,255,.72)}
-.about-bio-row{grid-template-columns:minmax(240px,320px) 1fr;gap:clamp(2rem,5vw,4rem);max-width:920px;margin:0 auto}
-.about-photo{display:block;height:auto;border-radius:14px;object-position:50% 68%;box-shadow:var(--shadow-lift)}
-.bio-name{font-size:clamp(1.9rem,3vw,2.4rem)}
-.bio-text{font-size:.98rem;max-width:56ch}
-
-#nationwide{background:var(--cream2)}
-.nw-grid{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
-.nw-map-card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:clamp(1.5rem,4vw,2.75rem);box-shadow:var(--shadow-soft)}
-.nw-map{position:relative;max-width:400px;margin:0 auto}
-.nw-map img{display:block;width:100%;height:auto}
-.nw-pin{position:absolute;left:95%;top:52.5%;width:0;height:0}
-.nw-pin-dot{position:absolute;left:-7px;top:-7px;width:14px;height:14px;border-radius:50%;background:#e9a23b;border:2.5px solid var(--white);box-shadow:0 2px 8px rgba(0,0,0,.25)}
-.nw-pin-dot::after{content:'';position:absolute;inset:-9px;border-radius:50%;border:2px solid rgba(233,162,59,.55);animation:pinPulse 2.6s var(--ease-out) infinite}
-@keyframes pinPulse{0%{transform:scale(.4);opacity:1}100%{transform:scale(1.6);opacity:0}}
-.nw-pin-label{position:absolute;right:16px;top:-14px;white-space:nowrap;background:var(--dark);color:var(--white);font-size:.72rem;font-weight:600;letter-spacing:.02em;padding:.3rem .6rem;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
-.nw-map-note{display:flex;justify-content:space-between;gap:1rem;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--line);font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text2)}
-.nw-text{color:var(--text2);font-size:.98rem;line-height:1.75;margin-bottom:1rem;max-width:56ch}
-.nw-stats{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:1.75rem 0 2rem}
-.nw-stat{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:1.05rem 1.25rem}
-.nw-stat dt{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--dark);line-height:1}
-.nw-stat dd{font-size:.8rem;color:var(--text2);margin-top:.35rem}
-
-#contact{background:radial-gradient(ellipse at 15% 0%,rgba(74,154,114,.14),transparent 55%),var(--dark)}
-#contact .section-title{font-size:clamp(2rem,4vw,3rem)}
-.contact-grid{gap:clamp(2rem,5vw,4rem);margin-top:3rem;align-items:start}
-.avail-line{color:var(--white);font-size:.9rem;margin-bottom:1.75rem;display:flex;align-items:center;gap:.5rem}
-.cinfo-item{margin-bottom:1.6rem}
-.cinfo-icon{width:42px;height:42px;border-radius:10px;background:rgba(74,154,114,.14)}
-.cinfo-val{font-size:1rem;overflow-wrap:anywhere}
-.cinfo-link{display:flex;width:fit-content;align-items:center;gap:.25rem;min-height:32px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s}
-.cinfo-link:hover{color:var(--green-light)}
-.form-box{border-radius:16px;padding:clamp(1.5rem,4vw,2.25rem);background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.1)}
-label{color:rgba(255,255,255,.72)}
-input,select,textarea{min-height:46px;border-radius:8px;font-size:1rem;background:rgba(255,255,255,.06)}
-textarea{min-height:120px}
-input::placeholder,textarea::placeholder{color:rgba(255,255,255,.38)}
-.form-note{color:rgba(255,255,255,.5)}
-
-#lenders{background:var(--cream)}
-.lender-wrap{gap:.55rem;max-width:940px}
-.lender-chip{border-radius:999px;padding:.5rem 1.05rem;border-color:var(--line);box-shadow:0 1px 2px rgba(28,43,39,.04)}
-
-#limit{background:var(--cream);padding-top:clamp(3rem,7vw,5rem)}
-.limit-title{font-size:clamp(2.6rem,8vw,6rem);letter-spacing:-.01em}
-
-@media(max-width:900px){
-  .nw-grid{grid-template-columns:1fr}
-  .nw-map-card{order:2}
-  .nw-copy{order:1}
-  .about-bio-row{grid-template-columns:1fr;text-align:left}
-  .about-photo{max-width:420px;aspect-ratio:4/5}
-}
-@media(max-width:600px){
-  #hero{padding-top:calc(var(--nav-h) + 2rem)}
-  .hero-eyebrow{font-size:.66rem;letter-spacing:.18em;max-width:20rem}
-  .hero-sub{font-size:1rem}
-  .hero-btns{flex-direction:column;align-items:stretch;width:100%;max-width:340px}
-  .hero-btns a{justify-content:center}
-  .svc-card{padding:1.6rem 1.4rem}
-  .about-photo{max-width:100%}
-  .nw-stats{gap:.6rem}
-  .nw-stat{padding:.9rem 1rem}
-  .nw-stat dt{font-size:1.7rem}
-  .nw-map-note{font-size:.6rem}
-  .nw-copy .btn-green{width:100%;justify-content:center;text-align:center}
-  .cinfo-val{font-size:.94rem}
-}
-</style>
-
+<link rel="stylesheet" href="assets/home.css"/>
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -450,194 +74,221 @@ input::placeholder,textarea::placeholder{color:rgba(255,255,255,.38)}
 </nav>
 <main id="main">
 
-
 <!-- HERO -->
-<section id="hero">
-  <div class="hero-video-wrap">
-    <video autoplay muted loop playsinline preload="metadata" poster="images/hero-poster.jpg" aria-hidden="true">
+<section class="hero" id="hero">
+  <div class="hero-media" aria-hidden="true">
+    <video autoplay muted loop playsinline preload="metadata" poster="images/hero-poster.jpg">
       <source src="videos/hero-bg.mp4" type="video/mp4"/>
     </video>
-    <div class="hero-video-overlay"></div>
   </div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">Mortgage Broker &middot; Gold Coast &amp; Nationwide</p>
-    <h1 class="hero-h1">Home Loan <em>Essentials</em></h1>
-    <p class="hero-tagline">Take It To The Limit</p>
-    <p class="hero-sub">We compare 30+ lenders to find the right home loan for your situation, then look after the process from application to settlement.</p>
-    <div class="hero-btns">
-      <a href="tel:0478938981" class="btn-green">Call Jack &middot; 0478 938 981</a>
-      <a href="#contact" class="btn-hero-outline">Book a Consultation</a>
+  <div class="wrap hero-body">
+    <p class="hero-kicker" data-enter style="--i:0">Mortgage Broker &middot; Gold Coast &amp; Nationwide</p>
+    <h1 data-enter style="--i:1">Home Loan <em>Essentials</em></h1>
+    <p class="hero-tag" data-enter style="--i:2">Take It To The Limit</p>
+    <div class="hero-row" data-enter style="--i:3">
+      <p class="hero-sub">We compare 30+ lenders to find the right home loan for your situation, then look after the process from application to settlement.</p>
+      <div class="hero-btns">
+        <a href="tel:0478938981" class="btn-green">Call Jack &middot; 0478 938 981</a>
+        <a href="#contact" class="btn-line btn-line--light">Book a Consultation</a>
+      </div>
     </div>
+    <ul class="hero-facts" data-enter style="--i:4">
+      <li><b>30+</b>Lenders on our panel</li>
+      <li><b>$0</b>Broker fee to you</li>
+      <li><b>4</b>Generations of banking</li>
+      <li><b>8</b>States &amp; territories</li>
+    </ul>
   </div>
-  <a href="#services" class="hero-scroll" aria-label="Scroll to services"><span></span></a>
 </section>
 
 <!-- SERVICES -->
-<section id="services">
-  <div class="svc-header reveal">
-    <p class="eyebrow">The Essential Portfolio</p>
-    <h2 class="section-title">Services Built on Experience</h2>
-    <p class="section-sub">Four loan services backed by four generations of banking knowledge and 30+ lender relationships.</p>
-  </div>
-  <div class="svc-grid">
-    <div class="svc-card reveal">
-      <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
-      <div class="svc-sub">Buying, upgrading or building.</div>
-      <h3>Home Loans</h3>
-      <p>We compare 30+ lenders to find the right rate and structure for your situation.</p>
-      <ul class="svc-list">
-        <li>Access to 30+ lenders</li>
-        <li>Fixed and variable rates</li>
-        <li>Pre-approval support</li>
-        <li>End-to-end guidance</li>
-      </ul>
-      <a href="#contact" class="svc-link">Enquire Now <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
+<section class="sec svc" id="services">
+  <div class="wrap svc-grid">
+    <div class="svc-intro">
+      <p class="eyebrow">The Essential Portfolio</p>
+      <h2 class="h2">Services Built on <em>Experience</em></h2>
+      <p class="lead">Four loan services backed by four generations of banking knowledge and 30+ lender relationships.</p>
+      <div class="svc-photo"><img src="images/aerial-22.webp" alt="Aerial view of rooftops and streets in a coastal suburb" width="1280" height="720" loading="lazy"/></div>
     </div>
-    <div class="svc-card reveal">
-      <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M21 2l-9.6 9.6M15.5 2H22v6.5"/></svg></div>
-      <div class="svc-sub">Step onto the ladder.</div>
-      <h3>First Home Buyers</h3>
-      <p>Buying your first home comes with a lot of moving parts. We cut through the noise and make the process straightforward.</p>
-      <ul class="svc-list">
-        <li>First Home Owner Grant help</li>
-        <li>Low-deposit options</li>
-        <li>Government scheme access</li>
-        <li>Step-by-step guidance</li>
-      </ul>
-      <a href="#contact" class="svc-link">Enquire Now <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
-    </div>
-    <div class="svc-card reveal">
-      <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,4 1,10 7,10"/><polyline points="23,20 23,14 17,14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4-4.64 4.36A9 9 0 0 1 3.51 15"/></svg></div>
-      <div class="svc-sub">Already have a home loan?</div>
-      <h3>Refinancing</h3>
-      <p>Your current lender is counting on you not to shop around. We check the market and find out if you can do better.</p>
-      <ul class="svc-list">
-        <li>Rate comparison check</li>
-        <li>Cashback deals available</li>
-        <li>Consolidation options</li>
-        <li>No-cost assessment</li>
-      </ul>
-      <a href="#contact" class="svc-link">Enquire Now <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
-    </div>
-    <div class="svc-card reveal">
-      <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/><polyline points="17,6 23,6 23,12"/></svg></div>
-      <div class="svc-sub">Grow your portfolio.</div>
-      <h3>Investment Loans</h3>
-      <p>The right loan structure matters as much as the rate. We help investors borrow smart from day one.</p>
-      <ul class="svc-list">
-        <li>Interest-only options</li>
-        <li>Equity release</li>
-        <li>Portfolio structuring</li>
-        <li>Tax-effective lending</li>
-      </ul>
-      <a href="#contact" class="svc-link">Enquire Now <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
-    </div>
+    <ol class="svc-list">
+      <li class="svc-row"><a href="#contact" data-service="Home Loan">
+        <span class="svc-num">01</span>
+        <div>
+          <p class="svc-kicker">Buying, upgrading or building.</p>
+          <h3>Home Loans</h3>
+          <p>We compare 30+ lenders to find the right rate and structure for your situation.</p>
+          <ul class="svc-tags"><li>Access to 30+ lenders</li><li>Fixed and variable rates</li><li>Pre-approval support</li><li>End-to-end guidance</li></ul>
+        </div>
+        <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a></li>
+      <li class="svc-row"><a href="#contact" data-service="First Home Buyer">
+        <span class="svc-num">02</span>
+        <div>
+          <p class="svc-kicker">Step onto the ladder.</p>
+          <h3>First Home Buyers</h3>
+          <p>Buying your first home comes with a lot of moving parts. We cut through the noise and make the process straightforward.</p>
+          <ul class="svc-tags"><li>First Home Owner Grant help</li><li>Low-deposit options</li><li>Government scheme access</li><li>Step-by-step guidance</li></ul>
+        </div>
+        <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a></li>
+      <li class="svc-row"><a href="#contact" data-service="Refinancing">
+        <span class="svc-num">03</span>
+        <div>
+          <p class="svc-kicker">Already have a home loan?</p>
+          <h3>Refinancing</h3>
+          <p>Your current lender is counting on you not to shop around. We check the market and find out if you can do better.</p>
+          <ul class="svc-tags"><li>Rate comparison check</li><li>Cashback deals available</li><li>Consolidation options</li><li>No-cost assessment</li></ul>
+        </div>
+        <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a></li>
+      <li class="svc-row"><a href="#contact" data-service="Investment Loan">
+        <span class="svc-num">04</span>
+        <div>
+          <p class="svc-kicker">Grow your portfolio.</p>
+          <h3>Investment Loans</h3>
+          <p>The right loan structure matters as much as the rate. We help investors borrow smart from day one.</p>
+          <ul class="svc-tags"><li>Interest-only options</li><li>Equity release</li><li>Portfolio structuring</li><li>Tax-effective lending</li></ul>
+        </div>
+        <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a></li>
+    </ol>
   </div>
 </section>
 
 <!-- DIY TEASER -->
-<section id="diy-teaser">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <p class="eyebrow" style="color:var(--green-light)">Getting Fitter Financially</p>
-      <h2 class="section-title" style="color:var(--white)">The <span style="color:var(--green-light)">DIY Home Loan</span></h2>
-      <p class="section-sub" style="color:rgba(255,255,255,0.6);margin:0 auto 2rem">A smarter, structured approach to your home loan that recycles your money, paying down debt faster while building wealth at the same time.</p>
+<section class="sec diy on-dark" id="diy-teaser">
+  <div class="wrap diy-grid">
+    <div>
+      <p class="eyebrow">Getting Fitter Financially</p>
+      <h2 class="h2">The <em>DIY Home Loan</em></h2>
+      <p class="lead">A smarter, structured approach to your home loan that recycles your money, paying down debt faster while building wealth at the same time.</p>
       <a href="diy.html" class="btn-green">Explore the DIY Home Loan <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div class="flow" aria-label="How the DIY Home Loan is structured, example scenario">
+      <span class="flow-badge">Example Scenario</span>
+      <div class="flow-box flow-box--home">
+        <div class="flow-label">Your Home</div>
+        <div class="flow-val">$1M Market Value &middot; LVR 60%</div>
+        <div class="flow-sub">MASTER LIMIT = $600k</div>
+      </div>
+      <div class="flow-link" aria-hidden="true"><span></span></div>
+      <div class="flow-splits">
+        <div class="flow-box"><div class="flow-label">Split 1</div><div class="flow-val">Standard Home Loan</div></div>
+        <div class="flow-box"><div class="flow-label">Split 2</div><div class="flow-val">Line of Credit / Interest Only Facility</div></div>
+      </div>
+      <div class="flow-link" aria-hidden="true"><span style="animation-delay:1.4s"></span></div>
+      <div class="flow-box">
+        <div class="flow-label">Your Investments</div>
+        <div class="flow-val">Shares &middot; ETFs &middot; Gold &middot; Whatever you choose</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:2.5rem">
-      <p class="eyebrow">About Jack</p>
-      <h2 class="section-title">Banking Is in Jack's Blood</h2>
-      <p class="section-sub" style="margin:0 auto">From the Bank of NSW in the 1930s to Home Loan Essentials today. A family story built on trust and service spanning nearly a century.</p>
-    </div>
-    <div class="about-timeline reveal">
-      <div class="tl-card">
-        <div class="tl-era">1930s</div>
-        <div class="tl-name">Great-Grandfather</div>
-        <div class="tl-bank">Bank of NSW</div>
-        <p>The foundation was laid. A career built on community banking at a time when a handshake meant everything.</p>
+<section class="sec about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-photo">
+        <picture><source srcset="images/jack-perkins.webp" type="image/webp"/><img src="images/jack-perkins.jpg" alt="Jack Perkins, finance broker at Home Loan Essentials" width="900" height="1200" loading="lazy"/></picture>
+        <div class="about-name"><strong>Jack Perkins</strong><span>Finance Broker &middot; Home Loan Essentials</span></div>
       </div>
-      <div class="tl-card">
-        <div class="tl-era">1960s – 1990s</div>
-        <div class="tl-name">Grandfather Peter</div>
-        <div class="tl-bank">Westpac</div>
-        <p>Over 30 dedicated years at Westpac, Peter built a reputation for integrity, sound advice, and genuine care for every client.</p>
-      </div>
-      <div class="tl-card">
-        <div class="tl-era">2000s – Present</div>
-        <div class="tl-name">Mum &amp; Dad</div>
-        <div class="tl-bank">Westpac &amp; Finance</div>
-        <p>Both parents continued the legacy in Westpac's banking sector. Jack's father later branched into finance broking, financial planning, and now runs his own accounting practice.</p>
-      </div>
-      <div class="tl-card tl-today">
-        <div class="tl-era">Today</div>
-        <div class="tl-name">Jack</div>
-        <div class="tl-bank">Home Loan Essentials</div>
-        <p>Four generations of financial experience, brought together in a modern broking practice that puts the client first.</p>
-      </div>
-    </div>
-    <div class="about-bio-row reveal">
-      <picture><source srcset="images/jack-perkins.webp" type="image/webp"/><img src="images/jack-perkins.jpg" alt="Jack Perkins, finance broker at Home Loan Essentials" class="about-photo" width="900" height="1200"/></picture>
-      <div>
-        <div class="bio-eyebrow">Meet Jack</div>
-        <div class="bio-name">Jack Perkins</div>
-        <div class="bio-role">Finance Broker &middot; Home Loan Essentials</div>
-        <p class="bio-text">Jack grew up in a banking family. His great-grandfather started at the Bank of NSW in the 1930s, his grandfather spent over 30 years at Westpac, and both his parents worked in financial services.</p>
-        <p class="bio-text">He started Home Loan Essentials to offer something that is harder to find than it should be: straight answers, no hard sell, and a broker who stays with you through the entire process.</p>
+      <div class="about-copy">
+        <p class="eyebrow">About Jack</p>
+        <h2 class="h2">Banking Is in <em>Jack's Blood</em></h2>
+        <p class="lead">From the Bank of NSW in the 1930s to Home Loan Essentials today. A family story built on trust and service spanning nearly a century.</p>
+        <p class="bio">Jack grew up in a banking family. His great-grandfather started at the Bank of NSW in the 1930s, his grandfather spent over 30 years at Westpac, and both his parents worked in financial services.</p>
+        <p class="bio">He started Home Loan Essentials to offer something that is harder to find than it should be: straight answers, no hard sell, and a broker who stays with you through the entire process.</p>
         <a href="#contact" class="btn-green">Get in Touch</a>
       </div>
     </div>
+    <ol class="timeline">
+      <li class="tl">
+        <div class="tl-era">1930s</div>
+        <h3>Great-Grandfather</h3>
+        <div class="tl-bank">Bank of NSW</div>
+        <p>The foundation was laid. A career built on community banking at a time when a handshake meant everything.</p>
+      </li>
+      <li class="tl">
+        <div class="tl-era">1960s to 1990s</div>
+        <h3>Grandfather Peter</h3>
+        <div class="tl-bank">Westpac</div>
+        <p>Over 30 dedicated years at Westpac, Peter built a reputation for integrity, sound advice, and genuine care for every client.</p>
+      </li>
+      <li class="tl">
+        <div class="tl-era">2000s to Present</div>
+        <h3>Mum &amp; Dad</h3>
+        <div class="tl-bank">Westpac &amp; Finance</div>
+        <p>Both parents continued the legacy in Westpac's banking sector. Jack's father later branched into finance broking, financial planning, and now runs his own accounting practice.</p>
+      </li>
+      <li class="tl tl--now">
+        <div class="tl-era">Today</div>
+        <h3>Jack</h3>
+        <div class="tl-bank">Home Loan Essentials</div>
+        <p>Four generations of financial experience, brought together in a modern broking practice that puts the client first.</p>
+      </li>
+    </ol>
   </div>
 </section>
 
 <!-- NATIONWIDE -->
-<section id="nationwide">
-  <div class="nw-grid reveal">
-    <div class="nw-map-card">
+<section class="sec nw" id="nationwide">
+  <div class="wrap">
+    <div class="nw-grid">
       <div class="nw-map">
-        <picture><source srcset="images/australia.webp" type="image/webp"/><img src="images/australia.png" alt="Map of Australia with Helensvale on the Gold Coast marked" width="837" height="801"/></picture>
+        <picture><source srcset="images/australia.webp" type="image/webp"/><img src="images/australia.png" alt="Map of Australia with Helensvale on the Gold Coast marked" width="837" height="801" loading="lazy"/></picture>
         <span class="nw-pin" aria-hidden="true"><span class="nw-pin-dot"></span><span class="nw-pin-label">Helensvale</span></span>
       </div>
-      <p class="nw-map-note"><span>Gold Coast, QLD</span><span>Every state and territory</span></p>
+      <div class="nw-copy">
+        <p class="eyebrow">Nationwide Service</p>
+        <h2 class="h2">Based in Helensvale. <em>Serving All of Australia.</em></h2>
+        <p class="lead">We're based in Helensvale on the Gold Coast and work with clients in every state and territory. Whether you're down the road or on the other side of the country, we'll help you get the right home loan.</p>
+        <p class="lead">The whole process can be done remotely without losing the one-on-one service Jack is known for. Video calls, digital signing and regular updates keep you in the loop, wherever you call home.</p>
+        <a href="#contact" class="btn-green">Get in Touch, Wherever You Are</a>
+      </div>
     </div>
-    <div class="nw-copy">
-      <p class="eyebrow">Nationwide Service</p>
-      <h2 class="section-title">Based in Helensvale.<br/><span class="green">Serving All of Australia.</span></h2>
-      <p class="nw-text">We're based in Helensvale on the Gold Coast and work with clients in every state and territory. Whether you're down the road or on the other side of the country, we'll help you get the right home loan.</p>
-      <p class="nw-text">The whole process can be done remotely without losing the one-on-one service Jack is known for. Video calls, digital signing and regular updates keep you in the loop, wherever you call home.</p>
-      <dl class="nw-stats">
-        <div class="nw-stat"><dt>8</dt><dd>States &amp; territories</dd></div>
-        <div class="nw-stat"><dt>30+</dt><dd>Lenders on our panel</dd></div>
-        <div class="nw-stat"><dt>100%</dt><dd>Can be done online</dd></div>
-        <div class="nw-stat"><dt>$0</dt><dd>Broker fee to you</dd></div>
-      </dl>
-      <a href="#contact" class="btn-green">Get in Touch, Wherever You Are</a>
+    <dl class="stats">
+      <div class="stat"><dt>8</dt><dd>States &amp; territories</dd></div>
+      <div class="stat"><dt>30+</dt><dd>Lenders on our panel</dd></div>
+      <div class="stat"><dt>100%</dt><dd>Can be done online</dd></div>
+      <div class="stat"><dt>$0</dt><dd>Broker fee to you</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- <li>Westpac</li><li>ANZ</li><li>NAB</li><li>ubank</li><li>AMP</li><li>Bankwest</li><li>St George</li><li>BOQ</li><li>Bendigo Bank</li><li>ME Bank</li><li>Bank Australia</li><li>Auswide Bank</li><li>Pepper Money</li><li>Liberty</li><li>La Trobe</li><li>Resimac</li><li>Firstmac</li><li>Beyond Bank</li><li>RedZed</li><li>Paramount</li><li>Suncorp</li><li>Macquarie</li><li>Qudos Bank</li><li>Prime Capital</li><li>Mortgage House</li><li>ING</li><li>CBA</li><li>Mortgage Street</li><li>MA Money</li> -->
+<section class="sec lenders on-dark" id="lenders">
+  <div class="wrap">
+    <div class="lenders-head">
+      <div>
+        <p class="eyebrow">Our Lender Panel</p>
+        <h2 class="h2">Access to 30+ Lenders <em>Nationwide</em></h2>
+      </div>
+      <p class="lead">We compare home loan options across a broad panel of banks, credit unions, and non-bank lenders to find the right fit for you.</p>
     </div>
+    <ul class="lender-wall">
+      <li>Westpac</li><li>ANZ</li><li>NAB</li><li>ubank</li><li>AMP</li><li>Bankwest</li><li>St George</li><li>BOQ</li><li>Bendigo Bank</li><li>ME Bank</li><li>Bank Australia</li><li>Auswide Bank</li><li>Pepper Money</li><li>Liberty</li><li>La Trobe</li><li>Resimac</li><li>Firstmac</li><li>Beyond Bank</li><li>RedZed</li><li>Paramount</li><li>Suncorp</li><li>Macquarie</li><li>Qudos Bank</li><li>Prime Capital</li><li>Mortgage House</li><li>ING</li><li>CBA</li><li>Mortgage Street</li><li>MA Money</li>
+    </ul>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:0.5rem">
+<section class="sec contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-copy">
       <p class="eyebrow">Get In Touch</p>
-      <h2 class="section-title" style="color:var(--white)">The Contact Vault</h2>
-      <p style="color:rgba(255,255,255,0.6);font-size:1rem;margin-top:0.5rem">Ready to talk? No obligation, no jargon. Just honest advice.</p>
+      <h2 class="h2">The Contact <em>Vault</em></h2>
+      <p class="lead">Ready to talk? No obligation, no jargon. Just honest advice.</p>
+      <p class="avail"><i aria-hidden="true"></i>Available anytime. Reach out whenever suits you.</p>
+      <ul class="cinfo">
+        <li><span class="cinfo-label">Phone</span><a href="tel:0478938981" class="cinfo-val">0478 938 981</a></li>
+        <li><span class="cinfo-label">Email</span><a href="mailto:jack@homeloanessentials.com.au" class="cinfo-val">jack@homeloanessentials.com.au</a></li>
+        <li><span class="cinfo-label">Location</span><span><span class="cinfo-val">Helensvale, QLD</span><a class="cinfo-link" href="https://www.google.com/maps/search/?api=1&amp;query=Helensvale+QLD" target="_blank" rel="noopener">View on Google Maps <span aria-hidden="true">&#8599;</span></a></span></li>
+        <li><span class="cinfo-label">Availability</span><span><span class="cinfo-val">Anytime</span><span class="cinfo-sub">Reach out whenever suits you</span></span></li>
+      </ul>
     </div>
-    <div class="contact-grid reveal">
-      <div>
-        <p class="avail-line"><span class="avail-dot" aria-hidden="true"></span> Available anytime. Reach out whenever suits you.</p>
-        <div class="cinfo-item"><div class="cinfo-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green-light)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.44 2 2 0 0 1 3.56 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.79a16 16 0 0 0 6 6l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="cinfo-label">Phone</div><a href="tel:0478938981" class="cinfo-val">0478 938 981</a></div></div>
-        <div class="cinfo-item"><div class="cinfo-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green-light)"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="cinfo-label">Email</div><a href="mailto:jack@homeloanessentials.com.au" class="cinfo-val">jack@homeloanessentials.com.au</a></div></div>
-        <div class="cinfo-item"><div class="cinfo-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green-light)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="cinfo-label">Location</div><span class="cinfo-val">Helensvale, QLD</span><a class="cinfo-sub cinfo-link" href="https://www.google.com/maps/search/?api=1&amp;query=Helensvale+QLD" target="_blank" rel="noopener">View on Google Maps <span aria-hidden="true">&#8599;</span></a></div></div>
-        <div class="cinfo-item"><div class="cinfo-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green-light)"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div><div><div class="cinfo-label">Availability</div><span class="cinfo-val">Anytime</span><div class="cinfo-sub">Reach out whenever suits you</div></div></div>
-      </div>
-      <form class="form-box" id="contactForm" novalidate onsubmit="event.preventDefault();submitContactForm();">
+    <form class="form-box" id="contactForm" novalidate onsubmit="event.preventDefault();submitContactForm();">
+        <h3 class="form-title">Send Jack a message</h3>
         <!-- Honeypot: hidden from humans, bots fill it in -->
         <input type="text" name="_honeypot" id="_honeypot" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true"/>
         <div class="form-row">
@@ -671,41 +322,33 @@ input::placeholder,textarea::placeholder{color:rgba(255,255,255,.38)}
           <label for="cf-message">Message *</label>
           <textarea id="cf-message" required placeholder="Tell us about your situation and how we can help..."></textarea>
         </div>
-        <div id="cf-error" role="alert" style="display:none;background:rgba(220,50,50,0.12);border:1px solid rgba(220,50,50,0.3);border-radius:6px;padding:0.75rem 1rem;margin-bottom:1rem;color:#ff8080;font-size:0.85rem"></div>
-        <div id="cf-success" role="status" style="display:none;background:rgba(74,154,114,0.15);border:1px solid rgba(74,154,114,0.3);border-radius:6px;padding:1rem 1.25rem;margin-bottom:1rem;color:var(--green-light);font-size:0.9rem;text-align:center">
+        <div id="cf-error" class="cf-msg cf-msg--error" role="alert"></div>
+        <div id="cf-success" class="cf-msg cf-msg--ok" role="status">
           <strong>Message sent!</strong> Jack will personally respond within 24 hours.
         </div>
         <button class="btn-submit" id="cf-submit" type="submit">Send Message</button>
         <p class="form-note">No obligation. Jack will personally respond within 24 hours.</p>
       </form>
-    </div>
-  </div>
-</section>
-
-<!-- LENDERS -->
-<section id="lenders">
-  <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:0.5rem">
-      <p class="eyebrow">Our Lender Panel</p>
-      <h2 class="section-title">Access to 30+ Lenders Nationwide</h2>
-      <p class="section-sub" style="margin:0 auto">We compare home loan options across a broad panel of banks, credit unions, and non-bank lenders to find the right fit for you.</p>
-    </div>
-    <div class="lender-wrap reveal">
-      <span class="lender-chip">Westpac</span><span class="lender-chip">ANZ</span><span class="lender-chip">NAB</span><span class="lender-chip">ubank</span><span class="lender-chip">AMP</span><span class="lender-chip">Bankwest</span><span class="lender-chip">St George</span><span class="lender-chip">BOQ</span><span class="lender-chip">Bendigo Bank</span><span class="lender-chip">ME Bank</span><span class="lender-chip">Bank Australia</span><span class="lender-chip">Auswide Bank</span><span class="lender-chip">Pepper Money</span><span class="lender-chip">Liberty</span><span class="lender-chip">La Trobe</span><span class="lender-chip">Resimac</span><span class="lender-chip">Firstmac</span><span class="lender-chip">Beyond Bank</span><span class="lender-chip">RedZed</span><span class="lender-chip">Paramount</span><span class="lender-chip">Suncorp</span><span class="lender-chip">Macquarie</span><span class="lender-chip">Qudos Bank</span><span class="lender-chip">Prime Capital</span><span class="lender-chip">Mortgage House</span><span class="lender-chip">ING</span><span class="lender-chip">CBA</span><span class="lender-chip">Mortgage Street</span><span class="lender-chip">MA Money</span>
-    </div>
   </div>
 </section>
 
 <!-- TAKE IT TO THE LIMIT -->
-<section id="limit">
-  <div class="reveal" style="text-align:center">
-    <h2 class="limit-title">Take It To<br/><span>The Limit</span></h2>
-    <div class="limit-hr"><span class="limit-sub">Home Loan Essentials</span></div>
+<section class="limit" id="limit">
+  <div class="limit-media" aria-hidden="true"><img src="images/aerial-18.webp" alt="" width="1280" height="720" loading="lazy"/></div>
+  <div class="wrap">
+    <h2 class="limit-title">Take It To <span>The Limit</span></h2>
+    <div class="limit-row">
+      <p>Home Loan Essentials &middot; Helensvale, Gold Coast</p>
+      <div class="hero-btns">
+        <a href="tel:0478938981" class="btn-green">Call Jack &middot; 0478 938 981</a>
+        <a href="#contact" class="btn-line btn-line--light">Book a Consultation</a>
+      </div>
+    </div>
   </div>
 </section>
 
-
 </main>
+
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -742,9 +385,8 @@ input::placeholder,textarea::placeholder{color:rgba(255,255,255,.38)}
   </div>
 </footer>
 
-
 <script src="assets/site.js" defer></script>
 <script src="assets/contact.js"></script>
-
+<script src="assets/home.js" defer></script>
 </body>
 </html>
