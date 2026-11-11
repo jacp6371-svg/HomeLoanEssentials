@@ -1,0 +1,41 @@
+/* Home Loan Essentials: shared base for the homepage and the newer pages.
+   Tokens, type, buttons and layout helpers. Loaded first, before site.css. */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#f0ede6;--cream2:#e8e3d9;--paper:#f7f5f0;
+  --dark:#1c2b27;--dark2:#243730;--deep:#14201c;
+  --green:#2a5c45;--green2:#3a7a5c;--green-light:#4a9a72;--mint:#8fc9a8;
+  --text:#1c2b27;--text2:#4a5e58;--white:#fff;
+  --gut:clamp(20px,5vw,64px);
+  --max:1200px;
+  --sec:clamp(88px,12vw,152px);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --mono:'DM Mono',ui-monospace,monospace;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--paper);line-height:1.6;overflow-x:hidden}
+img{display:block;height:auto}
+a{color:inherit}
+
+.btn-green{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--green);color:var(--white);font:600 .92rem/1 var(--sans);text-decoration:none;border:0;cursor:pointer}
+.btn-green:hover{background:var(--green2)}
+.btn-line{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:46px;padding:.8rem 1.6rem;border-radius:999px;font:600 .92rem/1 var(--sans);text-decoration:none;border:1px solid currentColor;transition:background-color .22s var(--ease-out),color .22s var(--ease-out),transform .22s var(--ease-out)}
+.btn-line:hover{transform:translateY(-2px)}
+.btn-line:active{transform:translateY(0) scale(.985)}
+.btn-line--light{color:var(--white);border-color:rgba(255,255,255,.45)}
+.btn-line--light:hover{background:var(--white);color:var(--dark);border-color:var(--white)}
+
+.wrap{max-width:calc(var(--max) + var(--gut)*2);margin:0 auto;padding:0 var(--gut)}
+.eyebrow{font:500 .7rem/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--green2);margin-bottom:1.1rem;display:flex;align-items:center;gap:.75rem}
+.eyebrow::before{content:'';width:28px;height:1px;background:currentColor;opacity:.6}
+.on-dark .eyebrow{color:var(--mint)}
+.h2{font:700 clamp(2.2rem,4.6vw,3.9rem)/1.06 var(--serif);letter-spacing:-.015em;color:var(--dark)}
+.h2 em{font-style:italic;font-weight:400;color:var(--green2)}
+.on-dark .h2{color:var(--white)}
+.on-dark .h2 em{color:var(--mint)}
+.lead{font-size:clamp(1rem,1.3vw,1.125rem);line-height:1.7;color:var(--text2);max-width:34rem}
+.on-dark .lead{color:rgba(255,255,255,.68)}
+.sec{padding:var(--sec) 0;position:relative}
+

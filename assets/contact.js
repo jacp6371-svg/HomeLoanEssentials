@@ -36,6 +36,7 @@ async function submitContactForm() {
     const data = await res.json();
     if (res.ok && data.ok) {
       succBox.style.display = 'block';
+      if (window.hleTrack) window.hleTrack('enquiry_submitted', { form_name: 'contact_vault', service: service || 'not_selected' });
       document.getElementById('cf-name').value = '';
       document.getElementById('cf-email').value = '';
       document.getElementById('cf-phone').value = '';
